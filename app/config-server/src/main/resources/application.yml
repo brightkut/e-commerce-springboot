@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  # Add this to read configuration from /configurations folder
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configurations
+server:
+  port: 8888
