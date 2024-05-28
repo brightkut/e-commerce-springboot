@@ -1,6 +1,6 @@
-package com.brightkut.handler;
+package com.brightkut.ecommerce.handler;
 
-import com.brightkut.exception.CustomerNotFoundException;
+import com.brightkut.ecommerce.exception.CustomerNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

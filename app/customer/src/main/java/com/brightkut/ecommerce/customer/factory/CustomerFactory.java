@@ -1,8 +1,8 @@
-package com.brightkut.customer.factory;
+package com.brightkut.ecommerce.customer.factory;
 
-import com.brightkut.customer.model.entity.Customer;
-import com.brightkut.customer.model.dto.CustomerRequest;
-import com.brightkut.customer.model.dto.CustomerResponse;
+import com.brightkut.ecommerce.customer.model.dto.CustomerResponse;
+import com.brightkut.ecommerce.customer.model.entity.Customer;
+import com.brightkut.ecommerce.customer.model.dto.CustomerRequest;
 import org.springframework.stereotype.Service;
 
 @Service

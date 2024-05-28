@@ -1,6 +1,6 @@
-package com.brightkut.customer.model.dto;
+package com.brightkut.ecommerce.customer.model.dto;
 
-import com.brightkut.customer.model.entity.Address;
+import com.brightkut.ecommerce.customer.model.entity.Address;
 
 public record CustomerResponse (
         String id,

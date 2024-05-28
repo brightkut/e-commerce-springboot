@@ -1,8 +1,8 @@
-package com.brightkut.customer.controller;
+package com.brightkut.ecommerce.customer.controller;
 
-import com.brightkut.customer.model.dto.CustomerRequest;
-import com.brightkut.customer.model.dto.CustomerResponse;
-import com.brightkut.customer.service.CustomerService;
+import com.brightkut.ecommerce.customer.model.dto.CustomerRequest;
+import com.brightkut.ecommerce.customer.model.dto.CustomerResponse;
+import com.brightkut.ecommerce.customer.service.CustomerService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

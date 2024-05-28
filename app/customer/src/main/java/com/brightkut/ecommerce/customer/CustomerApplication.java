@@ -1,4 +1,4 @@
-package com.brightkut.customer;
+package com.brightkut.ecommerce.customer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

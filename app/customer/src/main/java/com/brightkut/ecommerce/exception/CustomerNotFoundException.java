@@ -1,4 +1,4 @@
-package com.brightkut.exception;
+package com.brightkut.ecommerce.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

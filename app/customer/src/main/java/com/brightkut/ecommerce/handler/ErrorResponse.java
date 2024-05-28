@@ -1,4 +1,4 @@
-package com.brightkut.handler;
+package com.brightkut.ecommerce.handler;
 
 import java.util.Map;
 

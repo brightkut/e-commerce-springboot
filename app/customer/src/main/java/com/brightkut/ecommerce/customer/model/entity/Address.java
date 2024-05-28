@@ -1,4 +1,4 @@
-package com.brightkut.customer.model.entity;
+package com.brightkut.ecommerce.customer.model.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

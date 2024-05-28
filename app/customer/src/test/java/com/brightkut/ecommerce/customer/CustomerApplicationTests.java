@@ -1,4 +1,4 @@
-package com.brightkut.customer;
+package com.brightkut.ecommerce.customer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
