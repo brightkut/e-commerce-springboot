@@ -1,6 +1,6 @@
-package com.brightkut.ecommerce.customer.model.dto;
+package com.brightkut.ecommerce.customer.dto;
 
-import com.brightkut.ecommerce.customer.model.entity.Address;
+import com.brightkut.ecommerce.customer.model.Address;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 

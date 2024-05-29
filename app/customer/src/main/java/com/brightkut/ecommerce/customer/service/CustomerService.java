@@ -1,10 +1,10 @@
 package com.brightkut.ecommerce.customer.service;
 
 import com.brightkut.ecommerce.customer.factory.CustomerFactory;
-import com.brightkut.ecommerce.customer.model.dto.CustomerResponse;
-import com.brightkut.ecommerce.customer.model.entity.Customer;
+import com.brightkut.ecommerce.customer.dto.CustomerResponse;
+import com.brightkut.ecommerce.customer.entity.Customer;
 import com.brightkut.ecommerce.exception.CustomerNotFoundException;
-import com.brightkut.ecommerce.customer.model.dto.CustomerRequest;
+import com.brightkut.ecommerce.customer.dto.CustomerRequest;
 import com.brightkut.ecommerce.customer.repository.CustomerRepository;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;

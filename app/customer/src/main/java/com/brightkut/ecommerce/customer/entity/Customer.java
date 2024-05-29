@@ -1,5 +1,6 @@
-package com.brightkut.ecommerce.customer.model.entity;
+package com.brightkut.ecommerce.customer.entity;
 
+import com.brightkut.ecommerce.customer.model.Address;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;

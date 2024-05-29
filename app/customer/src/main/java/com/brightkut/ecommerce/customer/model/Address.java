@@ -1,12 +1,10 @@
-package com.brightkut.ecommerce.customer.model.entity;
+package com.brightkut.ecommerce.customer.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Accessors(chain = true)
-@Document
 public class Address {
     private String street;
     private String houseNumber;
