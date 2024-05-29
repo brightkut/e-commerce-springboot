@@ -61,7 +61,7 @@ public class CustomerService {
         return customerRepository.findAll()
                 .stream()
                 .map(customerFactory::fromCustomer)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public Boolean isCustomerExist(String customerId) {

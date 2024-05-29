@@ -3,6 +3,7 @@ package com.brightkut.ecommerce.product;
 import com.brightkut.ecommerce.category.Category;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
 
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@Accessors(chain = true)
 @Entity
 public class Product {
     @Id

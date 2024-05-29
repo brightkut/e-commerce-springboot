@@ -21,13 +21,13 @@ public class ProductController {
     }
 
     @PostMapping("/purchases")
-    public ResponseEntity<List<ProductPurchaseResponse>> purchaseProduct(@RequestBody @Valid List<ProductPurchaseRequest> requests){
-        return ResponseEntity.ok(productService.purchaseProduct());
+    public ResponseEntity<List<ProductPurchaseResponse>> purchaseProduct(@RequestBody @Valid List<ProductPurchaseRequest> request){
+        return ResponseEntity.ok(productService.purchaseProduct(request));
     }
 
     @GetMapping("/{productId}")
     public ResponseEntity<ProductResponse> getProductById(@PathVariable Integer productId){
-        return ResponseEntity.ok(productService.findProductById());
+        return ResponseEntity.ok(productService.findProductById(productId));
     }
 
     @GetMapping
