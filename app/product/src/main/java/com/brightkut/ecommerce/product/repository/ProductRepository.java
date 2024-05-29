@@ -1,5 +1,6 @@
-package com.brightkut.ecommerce.product;
+package com.brightkut.ecommerce.product.repository;
 
+import com.brightkut.ecommerce.product.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

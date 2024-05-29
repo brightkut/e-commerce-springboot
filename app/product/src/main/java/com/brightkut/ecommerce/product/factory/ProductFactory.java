@@ -1,6 +1,10 @@
-package com.brightkut.ecommerce.product;
+package com.brightkut.ecommerce.product.factory;
 
 import com.brightkut.ecommerce.category.Category;
+import com.brightkut.ecommerce.product.dto.ProductPurchaseResponse;
+import com.brightkut.ecommerce.product.dto.ProductRequest;
+import com.brightkut.ecommerce.product.dto.ProductResponse;
+import com.brightkut.ecommerce.product.entity.Product;
 import org.springframework.stereotype.Service;
 
 @Service

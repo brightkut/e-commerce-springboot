@@ -1,5 +1,10 @@
-package com.brightkut.ecommerce.product;
+package com.brightkut.ecommerce.product.controller;
 
+import com.brightkut.ecommerce.product.dto.ProductPurchaseRequest;
+import com.brightkut.ecommerce.product.dto.ProductPurchaseResponse;
+import com.brightkut.ecommerce.product.dto.ProductRequest;
+import com.brightkut.ecommerce.product.dto.ProductResponse;
+import com.brightkut.ecommerce.product.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

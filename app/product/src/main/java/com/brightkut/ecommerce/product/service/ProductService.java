@@ -1,6 +1,12 @@
-package com.brightkut.ecommerce.product;
+package com.brightkut.ecommerce.product.service;
 
 import com.brightkut.ecommerce.exception.ProductPurchaseException;
+import com.brightkut.ecommerce.product.dto.ProductPurchaseRequest;
+import com.brightkut.ecommerce.product.dto.ProductPurchaseResponse;
+import com.brightkut.ecommerce.product.dto.ProductRequest;
+import com.brightkut.ecommerce.product.dto.ProductResponse;
+import com.brightkut.ecommerce.product.factory.ProductFactory;
+import com.brightkut.ecommerce.product.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 

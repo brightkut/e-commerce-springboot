@@ -1,11 +1,10 @@
 package com.brightkut.ecommerce.category;
 
-import com.brightkut.ecommerce.product.Product;
+import com.brightkut.ecommerce.product.entity.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.brightkut.ecommerce.product;
+package com.brightkut.ecommerce.product.entity;
 
 import com.brightkut.ecommerce.category.Category;
 import jakarta.persistence.*;
