@@ -1,5 +1,6 @@
 package com.brightkut.ecommerce.order;
 
+import com.brightkut.ecommerce.orderline.OrderLine;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

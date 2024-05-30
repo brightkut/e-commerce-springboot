@@ -1,12 +1,12 @@
-package com.brightkut.ecommerce.order;
+package com.brightkut.ecommerce.orderline;
 
+import com.brightkut.ecommerce.order.Order;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Getter
 @Setter
