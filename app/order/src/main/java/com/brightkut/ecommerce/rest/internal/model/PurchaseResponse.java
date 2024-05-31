@@ -1,4 +1,4 @@
-package com.brightkut.ecommerce.product;
+package com.brightkut.ecommerce.rest.internal.model;
 
 import java.math.BigDecimal;
 

@@ -1,6 +1,8 @@
-package com.brightkut.ecommerce.orderline;
+package com.brightkut.ecommerce.order.factory;
 
-import com.brightkut.ecommerce.order.Order;
+import com.brightkut.ecommerce.order.entity.Order;
+import com.brightkut.ecommerce.order.entity.OrderLine;
+import com.brightkut.ecommerce.order.dto.OrderLineRequest;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,5 +1,6 @@
-package com.brightkut.ecommerce.order;
+package com.brightkut.ecommerce.order.dto;
 
+import com.brightkut.ecommerce.order.model.PaymentMethod;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;

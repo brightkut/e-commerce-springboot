@@ -1,4 +1,4 @@
-package com.brightkut.ecommerce.orderline;
+package com.brightkut.ecommerce.order.dto;
 
 public record OrderLineRequest(
         Integer id,

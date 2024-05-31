@@ -12,6 +12,13 @@ spring:
       ddl-auto: create
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: orderConfirmation:com.brightkut.ecommerce.kafka.model.OrderConfirmation
 
 application:
   config:

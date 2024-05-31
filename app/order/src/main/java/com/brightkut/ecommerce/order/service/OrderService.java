@@ -1,9 +1,15 @@
-package com.brightkut.ecommerce.order;
+package com.brightkut.ecommerce.order.service;
 
-import com.brightkut.ecommerce.customer.CustomerClient;
-import com.brightkut.ecommerce.orderline.OrderLineRequest;
-import com.brightkut.ecommerce.orderline.OrderLineService;
-import com.brightkut.ecommerce.product.ProductClient;
+import com.brightkut.ecommerce.rest.internal.CustomerClient;
+import com.brightkut.ecommerce.exception.BusinessException;
+import com.brightkut.ecommerce.kafka.model.OrderConfirmation;
+import com.brightkut.ecommerce.kafka.OrderProducer;
+import com.brightkut.ecommerce.order.factory.OrderFactory;
+import com.brightkut.ecommerce.order.repository.OrderRepository;
+import com.brightkut.ecommerce.order.dto.OrderRequest;
+import com.brightkut.ecommerce.order.dto.PurchaseRequest;
+import com.brightkut.ecommerce.order.dto.OrderLineRequest;
+import com.brightkut.ecommerce.rest.internal.ProductClient;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,19 +19,22 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderFactory orderFactory;
     private final OrderLineService orderLineService;
+    private final OrderProducer orderProducer;
 
     public OrderService(
             CustomerClient customerClient,
             ProductClient productClient,
             OrderRepository orderRepository,
             OrderFactory orderFactory,
-            OrderLineService orderLineService
+            OrderLineService orderLineService,
+            OrderProducer orderProducer
     ) {
         this.customerClient = customerClient;
         this.productClient = productClient;
         this.orderRepository = orderRepository;
         this.orderFactory = orderFactory;
         this.orderLineService = orderLineService;
+        this.orderProducer = orderProducer;
     }
 
     public Integer createOrder(OrderRequest request) {
@@ -34,13 +43,12 @@ public class OrderService {
                 .orElseThrow(()-> new BusinessException("Can not create order :: No customer exist with provided id"));
 
         // purchase the product --> product-ms (Rest Template)
-        productClient.purchaseProducts(request.products());
+        var purchasedProducts = productClient.purchaseProducts(request.products());
 
         // persist order
         var order = orderRepository.save(orderFactory.buildOrder(request));
 
         // persist order lines
-
         for (PurchaseRequest purchaseRequest: request.products()){
             orderLineService.saveOrderLine(
                     new OrderLineRequest(
@@ -55,7 +63,16 @@ public class OrderService {
         // start payment process
 
         // send order confirmation --> notification-ms (kafka)
+        orderProducer.sendOrderConfirmation(
+                new OrderConfirmation(
+                        request.reference(),
+                        request.amount(),
+                        request.paymentMethod(),
+                        customer,
+                        purchasedProducts
+                )
+        );
 
-        return null;
+        return order.getId();
     }
 }

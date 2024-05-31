@@ -1,4 +1,4 @@
-package com.brightkut.ecommerce.order;
+package com.brightkut.ecommerce.order.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

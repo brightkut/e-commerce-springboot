@@ -1,7 +1,8 @@
-package com.brightkut.ecommerce.product;
+package com.brightkut.ecommerce.rest.internal;
 
-import com.brightkut.ecommerce.order.BusinessException;
-import com.brightkut.ecommerce.order.PurchaseRequest;
+import com.brightkut.ecommerce.exception.BusinessException;
+import com.brightkut.ecommerce.order.dto.PurchaseRequest;
+import com.brightkut.ecommerce.rest.internal.model.PurchaseResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;

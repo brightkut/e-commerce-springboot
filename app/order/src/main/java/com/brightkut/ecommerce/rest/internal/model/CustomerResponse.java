@@ -1,4 +1,4 @@
-package com.brightkut.ecommerce.customer;
+package com.brightkut.ecommerce.rest.internal.model;
 
 public record CustomerResponse(
         String id,

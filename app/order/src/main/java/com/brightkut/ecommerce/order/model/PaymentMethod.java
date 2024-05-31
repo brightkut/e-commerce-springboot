@@ -1,4 +1,4 @@
-package com.brightkut.ecommerce.order;
+package com.brightkut.ecommerce.order.model;
 
 public enum PaymentMethod {
     PAYPAL,

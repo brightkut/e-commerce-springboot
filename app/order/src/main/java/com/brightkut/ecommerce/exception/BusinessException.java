@@ -1,8 +1,7 @@
-package com.brightkut.ecommerce.order;
+package com.brightkut.ecommerce.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.RequiredArgsConstructor;
 
 @EqualsAndHashCode(callSuper = true)
 @Data

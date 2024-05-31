@@ -1,6 +1,5 @@
-package com.brightkut.ecommerce.orderline;
+package com.brightkut.ecommerce.order.entity;
 
-import com.brightkut.ecommerce.order.Order;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
