@@ -1,6 +1,7 @@
 package com.brightkut.ecommerce.order.factory;
 
 import com.brightkut.ecommerce.order.dto.OrderRequest;
+import com.brightkut.ecommerce.order.dto.OrderResponse;
 import com.brightkut.ecommerce.order.entity.Order;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +14,15 @@ public class OrderFactory {
                 .setPaymentMethod(request.paymentMethod())
                 .setReference(request.reference())
                 .setCustomerId(request.customerId());
+    }
+
+    public OrderResponse fromOrder(Order order) {
+        return new OrderResponse(
+                order.getId(),
+                order.getReference(),
+                order.getTotalAmount(),
+                order.getPaymentMethod(),
+                order.getCustomerId()
+        );
     }
 }

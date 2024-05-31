@@ -1,5 +1,6 @@
 package com.brightkut.ecommerce.order.service;
 
+import com.brightkut.ecommerce.order.dto.OrderResponse;
 import com.brightkut.ecommerce.rest.internal.CustomerClient;
 import com.brightkut.ecommerce.exception.BusinessException;
 import com.brightkut.ecommerce.kafka.model.OrderConfirmation;
@@ -10,7 +11,10 @@ import com.brightkut.ecommerce.order.dto.OrderRequest;
 import com.brightkut.ecommerce.order.dto.PurchaseRequest;
 import com.brightkut.ecommerce.order.dto.OrderLineRequest;
 import com.brightkut.ecommerce.rest.internal.ProductClient;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class OrderService {
@@ -74,5 +78,18 @@ public class OrderService {
         );
 
         return order.getId();
+    }
+
+    public List<OrderResponse> getAllOrders() {
+        return orderRepository.findAll()
+                .stream()
+                .map(orderFactory::fromOrder)
+                .toList();
+    }
+
+    public OrderResponse getOrderById(Integer orderId) {
+        return orderRepository.findById(orderId)
+                .map(orderFactory::fromOrder)
+                .orElseThrow(()->new EntityNotFoundException("No order found with id " + orderId));
     }
 }

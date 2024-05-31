@@ -1,5 +1,6 @@
 package com.brightkut.ecommerce.order.factory;
 
+import com.brightkut.ecommerce.order.dto.OrderLineResponse;
 import com.brightkut.ecommerce.order.entity.Order;
 import com.brightkut.ecommerce.order.entity.OrderLine;
 import com.brightkut.ecommerce.order.dto.OrderLineRequest;
@@ -14,5 +15,9 @@ public class OrderLineFactory {
                 .setProductId(request.productId())
                 .setOrder(new Order().setId(request.orderId()))
                 .setQuantity(request.quantity());
+    }
+
+    public OrderLineResponse fromOrderLine(OrderLine orderLine) {
+        return new OrderLineResponse(orderLine.getId(), orderLine.getQuantity());
     }
 }
