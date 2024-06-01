@@ -27,8 +27,8 @@ public class EmailService {
     private final JavaMailSender mailSender;
     private final SpringTemplateEngine templateEngine;
 
-    public EmailService(SpringTemplateEngine templateEngine) {
-        this.mailSender = new JavaMailSenderImpl();
+    public EmailService(JavaMailSender mailSender,SpringTemplateEngine templateEngine) {
+        this.mailSender = mailSender;
         this.templateEngine = templateEngine;
     }
 
