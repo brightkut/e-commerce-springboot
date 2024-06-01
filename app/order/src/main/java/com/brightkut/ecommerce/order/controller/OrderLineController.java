@@ -1,7 +1,6 @@
 package com.brightkut.ecommerce.order.controller;
 
 import com.brightkut.ecommerce.order.dto.OrderLineResponse;
-import com.brightkut.ecommerce.order.entity.OrderLine;
 import com.brightkut.ecommerce.order.service.OrderLineService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
