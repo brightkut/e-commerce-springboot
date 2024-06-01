@@ -10,7 +10,9 @@ import com.brightkut.ecommerce.order.repository.OrderRepository;
 import com.brightkut.ecommerce.order.dto.OrderRequest;
 import com.brightkut.ecommerce.order.dto.PurchaseRequest;
 import com.brightkut.ecommerce.order.dto.OrderLineRequest;
+import com.brightkut.ecommerce.rest.internal.PaymentClient;
 import com.brightkut.ecommerce.rest.internal.ProductClient;
+import com.brightkut.ecommerce.rest.internal.model.PaymentRequest;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,7 @@ import java.util.List;
 public class OrderService {
     private final CustomerClient customerClient;
     private final ProductClient productClient;
+    private final PaymentClient paymentClient;
     private final OrderRepository orderRepository;
     private final OrderFactory orderFactory;
     private final OrderLineService orderLineService;
@@ -28,6 +31,7 @@ public class OrderService {
     public OrderService(
             CustomerClient customerClient,
             ProductClient productClient,
+            PaymentClient paymentClient,
             OrderRepository orderRepository,
             OrderFactory orderFactory,
             OrderLineService orderLineService,
@@ -35,6 +39,7 @@ public class OrderService {
     ) {
         this.customerClient = customerClient;
         this.productClient = productClient;
+        this.paymentClient = paymentClient;
         this.orderRepository = orderRepository;
         this.orderFactory = orderFactory;
         this.orderLineService = orderLineService;
@@ -65,6 +70,15 @@ public class OrderService {
         }
 
         // start payment process
+        var paymentRequest = new PaymentRequest(
+                request.amount(),
+                request.paymentMethod(),
+                order.getId(),
+                order.getReference(),
+                customer
+        );
+
+        paymentClient.requestOrderPayment(paymentRequest);
 
         // send order confirmation --> notification-ms (kafka)
         orderProducer.sendOrderConfirmation(
