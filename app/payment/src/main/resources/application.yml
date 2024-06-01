@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: payment-service
+  # Read config from config server
+  config:
+    import: optional:configserver:http://localhost:8888
