@@ -25,6 +25,7 @@ services:
       - mongo:/data
     ports:
       - 27018:27017
+
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
@@ -35,7 +36,8 @@ services:
     ports:
       - "22181:2181"
     networks:
-      - microservices-net
+      - microservice-net
+
   kafka:
     image: confluentinc/cp-kafka:latest
     container_name: ms_kafka
@@ -51,7 +53,7 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
     networks:
-      - microservices-net
+      - microservice-net
 
   mail-dev:
     container_name: ms-mail-dev
